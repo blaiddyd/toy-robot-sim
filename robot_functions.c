@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "robot.h"
 
 struct Robot init_robot() {
     int* position = malloc(sizeof(int) * 2);
@@ -16,8 +14,4 @@ struct Robot init_robot() {
 
     return toy_robot;
   
-}
-
-void eval_command(int* position) {
-
 }
