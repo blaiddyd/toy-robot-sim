@@ -14,17 +14,44 @@ struct Robot init_robot() {
   
 }
 
-bool check_for_place(char* command) {
-    
-}
 
 void eval_command(char* command, struct Robot toy_robot) {
+    // check for PLACE command
+   
+    if (strstr(command, "PLACE")) {
+        char *separated;
+
+        while( (separated = strsep(&command, " ")) != NULL) {
+        
+        }
+
+    }
     
+    else if (strstr(command, "MOVE")) {
+
+    }
+
+    else if (strstr(command, "LEFT") || strstr(command, "RIGHT")) {
+
+    }
+
+    else if (strstr(command, "REPORT")) {
+        
+    }
+
+  
+
 
 }
 
-void change_position(char* pos, struct Robot toy_robot) {
+void move_robot(char* pos, struct Robot toy_robot) {
+
     
+}
+
+void change_direction(char* direction, struct Robot toy_robot) {
+
+
 }
 
 void test_run() {
