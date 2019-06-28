@@ -15,9 +15,14 @@ struct Robot init_robot() {
 }
 
 void place_robot(char *position[], struct Robot toy_robot) {
-    toy_robot.position[0] = atoi(position[0]);
-    toy_robot.position[1] = atoi(position[1]);
+    if (atoi(position[0]) < 4 && atoi(position[0]) > 0) {
+        toy_robot.position[0] = atoi(position[0]);
+    }
 
+    if (atoi(position[1]) < 4 && atoi(position[1]) > 0) {
+        toy_robot.position[1] = atoi(position[1]);
+    }
+    
     toy_robot.direction = position[2];
 
     printf("%s", toy_robot.direction);
