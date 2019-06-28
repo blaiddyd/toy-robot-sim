@@ -34,6 +34,8 @@ int main(int argc, char **argv) {
 
         printf("Command entered: %s \n", command);
 
+        eval_command(command, toy_robot);
+
     }
 
    

@@ -14,3 +14,4 @@ struct Robot
 
 struct Robot init_robot();
 void test_run();
+void eval_command(char* command, struct Robot toy_robot);
