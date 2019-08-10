@@ -13,5 +13,5 @@ clean:
 	rm -f *.o
 
 clear:
-	rem -f *.o
+	rm -f *.o
 	rm toy_robot

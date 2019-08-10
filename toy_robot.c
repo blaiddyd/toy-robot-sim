@@ -25,7 +25,10 @@ int main(int argc, char **argv) {
     else {
         printf("Welcome to Ekin's Toy Robot Simulator (user mode)!\n");
         
+        int board[5][5] = init_board();
+
         struct Robot toy_robot = init_robot();
+    
         bool place_invoked = false;
         char* command = malloc(sizeof(char) * 256);
 

@@ -14,6 +14,18 @@ struct Robot init_robot() {
   
 }
 
+int[][] init_board() {
+    int board[5][5];
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            board[i][j] = false;
+        }
+    }
+
+    return board;
+}
+
 void place_robot(char *position[], struct Robot toy_robot) {
     if (atoi(position[0]) < 4 && atoi(position[0]) > 0) {
         toy_robot.position[0] = atoi(position[0]);
@@ -25,7 +37,8 @@ void place_robot(char *position[], struct Robot toy_robot) {
     
     toy_robot.direction = position[2];
 
-    printf("%s", toy_robot.direction);
+    printf("Robot's coordinates: %d,%d\n", toy_robot.position[0], toy_robot.position[1]);
+    printf("Robot's direction: %s\n", toy_robot.direction);
 }
 
 void eval_command(char* command, struct Robot toy_robot) {
@@ -34,7 +47,7 @@ void eval_command(char* command, struct Robot toy_robot) {
     if (strstr(command, "PLACE")) {
         char *separated;
         char *found_position;
-        char *parsed_position[3];
+        char *parsed_position[4];
         int count = 0;
 
         while( (separated = strsep(&command, " ")) != NULL) {
@@ -50,7 +63,6 @@ void eval_command(char* command, struct Robot toy_robot) {
                        }
 
                        parsed_position[count - 1] = found_position;
-
                     }
                 }
             }
