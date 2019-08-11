@@ -9,10 +9,10 @@ struct Robot
 {
     int* position;
     char* direction;
+    bool place_issued;
     
 };
 
 struct Robot init_robot();
-int[][] init_board();
 void test_run();
 void eval_command(char* command, struct Robot toy_robot);

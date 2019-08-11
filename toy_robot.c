@@ -23,25 +23,24 @@ int main(int argc, char **argv) {
     }
    
     else {
-        printf("Welcome to Ekin's Toy Robot Simulator (user mode)!\n");
-        
-        int board[5][5] = init_board();
+        printf("Welcome to Ekin's Toy Robot Simulator (input mode)!\n");
+        printf("Meet your very own toy robot, Nezuko!\n");
 
         struct Robot toy_robot = init_robot();
-    
-        bool place_invoked = false;
         char* command = malloc(sizeof(char) * 256);
 
-        printf("Enter your first command for the robot: \n");
-        fgets(command, 256, stdin);
+        printf("Enter your first command for Nezuko: \n");
 
-        printf("Command entered: %s \n", command);
+        while (true) {
+            fgets(command, 256, stdin);
+            eval_command(command, toy_robot);
+            command[0] = '\0';
+        }
 
-        eval_command(command, toy_robot);
-
+        free(command);
+        free(toy_robot.position);
+        free(toy_robot.direction);
     }
-
-   
 
     return 0;
 }
