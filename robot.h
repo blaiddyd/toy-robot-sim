@@ -5,11 +5,12 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+bool place_issued;
+
 struct Robot
 {
     int* position;
     char* direction;
-    bool place_issued;
     
 };
 
